@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<title>
+useless
+</title>
+<body>
+<h1>Hello! This is a basic demonstration of HTML. (#2)</h1>
+<h2>First, I'd like to show clickable paragraphs:</h2>
+<p id="demo" onclick="changeParagraph()">Click me!</p>
+<script>
+function changeParagraph() {
+var returnVarColor;
+returnVarColor = (Math.floor((Math.random() * 3) + 1));
+var colorP1;
+if (returnVarColor == 1) {
+colorP1 = "red";
+} if (returnVarColor == 2) {
+colorP1 = "blue";
+} if (returnVarColor == 3) {
+colorP1 = "green";
+} 
+var returnVarText;
+returnVarText = (Math.floor((Math.random() * 3) + 1));
+var textP1;
+if (returnVarText == 1) {
+textP1 = "Hey, this is possibility #1! Hello!";
+} if (returnVarText == 2) {
+textP1 = "Hey, this is possibility #2! I'm very good right now!";
+} if (returnVarText == 3) {
+textP1 = "Hey, this is possibility #3! I don't like coconuts!";
+} 
+document.getElementById("demo").innerHTML = textP1;
+document.getElementById("demo").style.color = colorP1;
+}
+</script>
+</body>
+</html>
