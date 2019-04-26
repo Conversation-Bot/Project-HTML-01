@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>
+        hi
+    </title>
+	</head>
+	<body>
+		<p id="clock" style="font-size:500%"></p>
+<button onlick="changeTime()">click to start</button>
+		<script>
+            var hour, minute, seconds;
+            hour = 100;
+            minute = 0;
+            seconds = 0;
+    changeTime();
+    function changeTime() {
+    seconds--;
+    if (seconds < 0) {
+        minute--;
+seconds = 59
+    }
+    if (minute < 0) {
+        hour--;
+minute = 59
+    }
+
+    console.log(hour+" - "+ minute +" - "+ seconds);
+    if (hour > 0 && minute > 0 && seconds > 0) {
+        document.getElementById("clock").innerHTML = hour + ":" + minute + ":" + seconds;
+    }
+    else if (hour > 0 && minute > 0 && seconds == 0) {
+        document.getElementById("clock").innerHTML = hour + ":" + minute + ": 00";
+    }else if (hour > 0 && minute == 0 && seconds == 0) {
+        document.getElementById("clock").innerHTML = hour + ":00: 00";
+    }else if (hour > 0 && minute == 0 && seconds > 0) {
+        document.getElementById("clock").innerHTML = hour + ":00:" + seconds;
+    }else if (hour == 0 && minute > 0 && seconds > 0) {
+        document.getElementById("clock").innerHTML = minute + ":" + seconds;
+    }else if (hour == 0 && minute == 0 && seconds > 0) {
+        document.getElementById("clock").innerHTML = "0:" + seconds;
+    }else if (hour == 0 && minute > 0 && seconds == 0) {
+        document.getElementById("clock").innerHTML = minute + ":00";
+    }else if (hour == 0 && minute == 0 && seconds == 0) {
+        document.getElementById("clock").innerHTML = "00:00";
+    }else{
+        document.getElementById("clock").innerHTML = "test";
+    } 
+    if (hour === 0 && minute === 0 && seconds === 0) {
+        return;
+    } else {
+        setInterval(changeTime, 10);
+    }
+}
+		</script>
+	</body>
+</html>

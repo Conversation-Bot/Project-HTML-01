@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>
+  no
+</title>
+no
+</head>
+
+<body>
+<h1>hello.</h1>
+<h2><b>how are you?</b></h2>
+  <h3>cuz im pretty good rn</h3>
+<p id="1">this is a paragraph lol</p>
+<p id="2">lmao paragraph 2</p>
+<p id="3"><b>okay</b> so basically this is paragraph 3</p>
+<button onclick="changeParagraphText()">Click me lol</button>
+<script>
+  function changeParagraphText() { 
+var r;
+var newText;
+var paragraphChoice;
+var paragraphChoiceContent;
+paragraphChoice = prompt("Which paragraph's text would you like to change? e.g. 1, 2, 3");
+if (paragraphChoice == 1 || paragraphChoice == 2 || paragraphChoice == 3) {
+paragraphChoiceContent = document.getElementById(paragraphChoice).innerHTML;
+newText = prompt("What do you want to change paragraph " + paragraphChoice + "'s text to?"); // You can actually include code, like <​​​b​​​​> or <​​​​​h​2​​>! You can even put <br>
+if (newText === "null" || newText === "") {
+} else {
+r = confirm("You will replace '" + paragraphChoiceContent + "' with '" + newText + "'. Continue?");
+document.getElementById(paragraphChoice).innerHTML = newText;
+}
+}
+else {
+alert("That's... Not a paragraph choice. You can only choose 1, 2, or 3.");
+}
+  }
+      </script>
+  </body>
+        </html>
